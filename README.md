@@ -1,4 +1,4 @@
-#Practica-GitHub
+# Practica-GitHub
 
 1. Creamos repositorio
 2. Vinculamos el repositorio con una carpeta local y sus archivos
