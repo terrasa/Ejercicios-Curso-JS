@@ -1,8 +1,8 @@
 //_Dia 3 Ejer 7_contar veces que aparece una letra dentro de una frase
 //__OK__ver .push
 
-function searchEnd(fin, letter){
-	if(fin == textString.length){
+function searchEnd(fin, letter, text){
+	if(fin == text.length){
 		console.log('Busqueda terminada.');
 		if(indexLetter.length >0){
 			console.log('La letra "'+letter+'" se repite '+ indexLetter.length + ' veces.');
@@ -14,19 +14,19 @@ function searchEnd(fin, letter){
 }
 
 function searchLetter(text, letter){
-	contadorText=0;
-	contador=0;
-	textString = text;
+	let contadorText=0;
+	let contador=0;
+	//textString = text;
 	indexLetter = [];
 	
-	while (contadorText < textString.length){
-		indexOk = textString.indexOf(letter, contadorText);
+	while (contadorText < text.length){
+		let indexOk = text.indexOf(letter, contadorText);
 		console.log(indexOk);
 		if(indexOk === -1 && indexLetter.length >0){
-			contadorText=textString.length;
+			contadorText=text.length;
 		}
 		else if(indexOk === -1 ){
-			contadorText=textString.length;
+			contadorText=text.length;
 		}
 		else{
 			//indexLetter.push =(indexOk);
@@ -34,7 +34,7 @@ function searchLetter(text, letter){
 			contadorText = indexOk + 1;
 			contador++
 		}
-		searchEnd(contadorText, letter);
+		searchEnd(contadorText, letter, text);
 	}
 	console.log(indexLetter);
 }
