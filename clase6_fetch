@@ -1,0 +1,20 @@
+const url = 'https://randomuser.me/api/?results=10';
+
+async function pilladatos () {
+  let firstData = await fetch(url);
+  let data = await firstData.json();
+  console.log(data);
+  return data  
+}
+
+pilladatos();
+
+
+async function pilladatos (url) {
+  let firstData = await fetch(url);
+  let data = await firstData.json();
+  console.log(data);
+  return data  
+}
+
+pilladatos('https://randomuser.me/api/?results=10');
