@@ -18,3 +18,22 @@ async function pilladatos (url) {
 }
 
 pilladatos('https://randomuser.me/api/?results=10');
+
+
+async function pilladatos (url) {
+  let firstData = await fetch(url);
+  data = await firstData.json();
+  return data  
+}
+
+pilladatos('https://api.github.com/users/terrasa');
+
+
+let data;
+async function pilladatos (url) {
+  let firstData = await fetch(url);
+  data = await firstData.json();
+  
+}
+
+pilladatos('https://api.github.com/users/Josheriff ');
