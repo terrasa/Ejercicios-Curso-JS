@@ -1,0 +1,10 @@
+.breed{
+	width: 90%;
+	padding: 25px;
+	background-color: aquamarine;
+	
+}
+.breed p {
+	display: inline-block;
+	padding-right: 10px;
+}
