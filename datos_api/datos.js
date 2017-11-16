@@ -72,6 +72,11 @@ async function llamaYPinta(url){
 	console.log('text.status: ', text.status);
 	console.log('text: ', text);
 	
+	/*let raza5 = Object.keys(mensaje)[5]; console.log('raza 5: = ', raza5);
+	mensaje.(raza5.innerHTML).forEach(function(element){
+		console.log('forEach text.message.bulldog: ', element);	
+	})*/
+	
 	mensaje.bulldog.forEach(function(element){
 		console.log('forEach text.message.bulldog: ', element);	
 	})
