@@ -2,6 +2,17 @@
 
 //__  /api/breeds/list/all  Listado de razas y subrazas
 
+/*async function dataImg(url, breed_div, pos){
+	let breed = document.getElementsByClassName(breed_div);
+	console.log('subraza pasado: ', pos);
+		
+	
+		let breedP = document.createElement('img');
+		breed[0].appendChild(breedP);
+		breedP.src = pos[element]; 
+		console.log('subraza: ', pos[element]);
+		
+	}*/
 
 async function dataElement(url, breed_div, pos){
 	let breed = document.getElementsByClassName(breed_div);
@@ -13,7 +24,7 @@ async function dataElement(url, breed_div, pos){
 		breedP.innerHTML = pos[element]; // Comillas invertidas ``
 		console.log('subraza: ', pos[element]);
 		breedP.addEventListener("click", function(){
-			dataImg('https://dog.ceo/api/breeds/XXXXXXX', 'breedImg', pos[element])
+			dataImg('https://dog.ceo/api/breed/{pos}/{pos[element]}/images/random'), 'breedImg', pos[element])
 		});
 	}
 }

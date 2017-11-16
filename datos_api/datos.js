@@ -42,7 +42,7 @@ async function llamaYPinta(url){
 	
  }
  
- llamaYPinta('https://dog.ceo/api/breeds/image/random');
+ llamaYPinta('https://dog.ceo/api/breed/{breed name}/{sub-breed name}/images/random');
 
 //___https://dog.ceo/dog-api/_____
 
