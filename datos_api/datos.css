@@ -4,7 +4,13 @@
 	background-color: aquamarine;
 	
 }
-.breed p {
+.breed p, .subBreed p {
 	display: inline-block;
 	padding-right: 10px;
+}
+.subBreed{
+	width: 90%;
+	padding: 25px;
+	background-color:darkkhaki ;
+	
 }
