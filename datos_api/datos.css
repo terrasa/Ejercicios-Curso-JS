@@ -15,7 +15,12 @@
 	
 }
 .breedImg{
-	width: 50%;
+	width: 90%;
 	padding: 5px;
-	background-color:darkseagreen ;
+	background-color:darkseagreen;
+    text-align: center;
+}
+#imageDog{
+    max-width: 99%;
+    max-height: 300px;
 }

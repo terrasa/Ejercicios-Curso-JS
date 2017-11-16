@@ -111,5 +111,13 @@ async function llamaYPinta(url){
 	console.log('Propiedades: cada Raza: ', Object.keys(mensaje) );
 	console.log('Propiedades: Raza index 5: ', Object.keys(mensaje)[5] );
 }
+
+/*
+const misPerros = Objects.keys(mensaje);
+
+misPerros.for
+
+
+*/
  
  llamaYPinta('https://dog.ceo/api/breeds/list/all');
