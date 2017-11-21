@@ -28,25 +28,25 @@ async function dataElement(breed_div, pos, prop){
 		raza.innerHTML =`La raza seleccionada es: ${prop}, elige una subraza.`;
 		console.log('array subraza pasado: ', pos);
 		console.log("raza pasada: ", prop);
-		for(let element = 0; element < pos.length; element++){
+		//for(let element = 0; element < pos.length; element++){ en el forEach cambio element por index pos[index]
+		 pos.forEach(function(element,index){
 			let breedP = document.createElement('p');
 			breed[0].appendChild(breedP);
-			breedP.innerHTML = pos[element]; // Comillas invertidas ``
-			console.log('subraza: ', pos[element]);
+			breedP.innerHTML = pos[index]; // Comillas invertidas `` 
+			console.log('subraza: ', pos[index]);
 			breedP.addEventListener("click", function(){
-				let xxxx = element;
-				dataImg(`https://dog.ceo/api/breed/${prop}/${pos[element]}/images/random`, breedImage);
-				 return xxxx;
+				xxxx = index; // GLOBAL
+				dataImg(`https://dog.ceo/api/breed/${prop}/${pos[index]}/images/random`, breedImage);
 			});
-		} 
+		});
 	}
 	next.addEventListener("click", function(){
+		
 		if(pos.length == 0){
 	   		dataImg(`https://dog.ceo/api/breed/${prop}/ /images/random`, breedImage)
 		}
 		else{
-			console.log('en el else nex: ', pos[xxxx]);  
-			dataImg(`https://dog.ceo/api/breed/${prop}/${xxxx} /images/random`, breedImage)
+			dataImg(`https://dog.ceo/api/breed/${prop}/${pos[xxxx]}/images/random`, breedImage)
 		}
 	});
 }
@@ -76,7 +76,6 @@ async function dataProp(url, breed_div){
 			dataElement('subBreed', result[raza], raza)
 		});
 	})
-	
 }	
 
 dataProp('https://dog.ceo/api/breeds/list/all', 'breed');
