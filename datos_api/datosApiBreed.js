@@ -10,6 +10,9 @@ async function dataImg(url, breedImage){
 	let result = dataJson.message;
     console.log('result: ', result);
 	breedImage.src = result; 
+    next.addEventListener("click", function(){
+        dataImg(url, breedImage)
+    });
 }	
 
 async function dataElement(breed_div, pos, prop){
@@ -40,7 +43,7 @@ async function dataElement(breed_div, pos, prop){
 			});
 		});
 	}
-	next.addEventListener("click", function(){
+	/*next.addEventListener("click", function(){
 		
 		if(pos.length == 0){
 	   		dataImg(`https://dog.ceo/api/breed/${prop}/ /images/random`, breedImage)
@@ -48,8 +51,11 @@ async function dataElement(breed_div, pos, prop){
 		else{
 			dataImg(`https://dog.ceo/api/breed/${prop}/${pos[xxxx]}/images/random`, breedImage)
 		}
-	});
+	});*/
 }
+
+
+
 async function dataProp(url, breed_div){
 	let breed = document.getElementsByClassName(breed_div);
     let data = await fetch(url);
