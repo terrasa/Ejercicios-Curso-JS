@@ -11,6 +11,23 @@ async function dataImg(url, breedImage){
     let data = await fetch(lastUrl);
     let dataJson = await data.json();
 	let result = dataJson.message;
+	breedImage.src = result; 
+    if(controlVar){
+		next.addEventListener("click", async function(){
+            dataImg(url, breedImage);
+    	});
+		controlVar = !controlVar;
+	}
+}	
+
+
+
+/*async function dataImg(url, breedImage){
+	let lastUrl = await url;
+	console.log('último url ', lastUrl);
+    let data = await fetch(lastUrl);
+    let dataJson = await data.json();
+	let result = dataJson.message;
     console.log('result: ', result);
 	breedImage.src = result; 
     if(controlVar){
@@ -25,7 +42,7 @@ async function dataImg(url, breedImage){
 		console.log('último url dentro dataimg2 ', lastUrl);
 		await dataImg(lastUrl, breedImage);
 	}
-}	
+}	*/
 
 async function dataElement(breed_div, pos, prop){
 	let breed = document.getElementsByClassName(breed_div);
