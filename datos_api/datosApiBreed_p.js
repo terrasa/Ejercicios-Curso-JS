@@ -3,28 +3,16 @@
 //__  /api/breeds/list/all  Listado de razas y subrazas
 
 let next = document.getElementById('next');
-let controlVar = true;
 
 async function dataImg(url, breedImage){
-	let lastUrl = await url;
-	console.log('último url ', lastUrl);
-    let data = await fetch(lastUrl);
+    let data = await fetch(url);
     let dataJson = await data.json();
 	let result = dataJson.message;
     console.log('result: ', result);
 	breedImage.src = result; 
-    if(controlVar){
-		next.addEventListener("click", async function(){
-			let lastUrl = await url;
-			dataImg2();
-    	});
-		controlVar = !controlVar;
-	}
-	console.log('último url antes ', lastUrl);
-	async function dataImg2(){
-		console.log('último url dentro dataimg2 ', lastUrl);
-		await dataImg(lastUrl, breedImage);
-	}
+    next.addEventListener("click", function(){
+        dataImg(url, breedImage)
+    });
 }	
 
 async function dataElement(breed_div, pos, prop){
@@ -50,6 +38,7 @@ async function dataElement(breed_div, pos, prop){
 			breedP.innerHTML = pos[index]; // Comillas invertidas `` 
 			console.log('subraza: ', pos[index]);
 			breedP.addEventListener("click", function(){
+				//xxxx = index; // GLOBAL
 				dataImg(`https://dog.ceo/api/breed/${prop}/${pos[index]}/images/random`, breedImage);
 			});
 		});
@@ -64,6 +53,8 @@ async function dataElement(breed_div, pos, prop){
 		}
 	});*/
 }
+
+
 
 async function dataProp(url, breed_div){
 	let breed = document.getElementsByClassName(breed_div);
