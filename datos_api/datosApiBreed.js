@@ -4,8 +4,23 @@
 
 let next = document.getElementById('next');
 let controlVar = true;
+let lastUrl;
+
+next.addEventListener("click", async function(){
+	let breedImage = document.getElementById('imageDog');  // se define de nuevo de forma local dentro de la funcion
+	dataImg(lastUrl, breedImage);
+    });
 
 async function dataImg(url, breedImage){
+	lastUrl = await url;
+	console.log('último url ', lastUrl);
+    let data = await fetch(lastUrl);
+    let dataJson = await data.json();
+	let result = dataJson.message;
+	breedImage.src = result; 
+}
+
+/*async function dataImg(url, breedImage){
 	let lastUrl = await url;
 	console.log('último url ', lastUrl);
     let data = await fetch(lastUrl);
@@ -18,9 +33,7 @@ async function dataImg(url, breedImage){
     	});
 		controlVar = !controlVar;
 	}
-}	
-
-
+}*/
 
 /*async function dataImg(url, breedImage){
 	let lastUrl = await url;
