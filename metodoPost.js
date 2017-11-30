@@ -37,7 +37,7 @@ let campaign = {
     title: "PUT MODIFICADO TITLE",
 };
 
-async function postEx(url, campaign){
+async function putEx(url, campaign){
     try{
         const headers = {
             'Accept': 'application/json',
@@ -48,14 +48,14 @@ async function postEx(url, campaign){
             method: 'PUT',
             body: JSON.stringify(campaign)
         });
-        const objJson = await data.json();
-        console.log(objJson);
-        //console.log(data);
+        //const objJson = await data.json();
+        //console.log(objJson);
+        console.log(data);
     }catch(error){
         console.log('error');
     }
 }
 
-postEx('http://192.168.1.67:3000/campaign/5a2066b2c49f6c47dbbfb80a ', campaign)
+putEx('http://192.168.1.67:3000/campaign/5a2066b2c49f6c47dbbfb80a ', campaign)
 
 // Igual cambiando POST por GET 
